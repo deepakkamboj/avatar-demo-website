@@ -111,9 +111,9 @@ function DemoCarousel({ onDemoClick }: DemoCarouselProps) {
                     <Image
                       src={slide.image}
                       alt={slide.title}
-                      width={800}
-                      height={500}
-                      className="w-full h-64 md:h-80 object-cover"
+                      width={1200}
+                      height={800}
+                      className="w-full h-96 md:h-[32rem] lg:h-[36rem] object-cover"
                     />
                     <div className="p-6">
                       <h3 className="text-xl font-semibold mb-2">
