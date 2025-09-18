@@ -596,7 +596,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-1">
                       <img
-                        src="/user/aurelie.png"
+                        src="/aur.png"
                         alt="Aurelie Saada"
                         className="w-full h-full object-cover rounded-full"
                       />
