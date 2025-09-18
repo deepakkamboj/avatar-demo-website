@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 36 33% 97%; /* Warm cream/light coffee */
+  --foreground: 25 47% 15%; /* Dark coffee brown */
+  --card: 36 33% 97%; /* Warm cream */
+  --card-foreground: 25 47% 15%; /* Dark coffee brown */
+  --popover: 36 33% 97%; /* Warm cream */
+  --popover-foreground: 25 47% 15%; /* Dark coffee brown */
+  --primary: 18 65% 45%; /* Rich coffee brown */
+  --primary-foreground: 36 33% 97%; /* Light cream */
+  --secondary: 30 25% 85%; /* Light coffee/beige */
+  --secondary-foreground: 25 47% 15%; /* Dark coffee brown */
+  --muted: 30 25% 90%; /* Very light beige */
+  --muted-foreground: 25 25% 45%; /* Medium coffee brown */
+  --accent: 25 60% 55%; /* Medium coffee brown */
+  --accent-foreground: 36 33% 97%; /* Light cream */
+  --destructive: 0 84.2% 60.2%; /* Keep red for errors */
+  --destructive-foreground: 210 40% 98%; /* White */
+  --border: 30 15% 80%; /* Light coffee border */
+  --input: 30 15% 85%; /* Light coffee input */
+  --ring: 18 65% 45%; /* Rich coffee ring */
+  --radius: 0.5rem;
+  --chart-1: 18 65% 45%; /* Coffee brown */
+  --chart-2: 35 45% 60%; /* Light brown */
+  --chart-3: 45 35% 50%; /* Tan */
+  --chart-4: 25 60% 35%; /* Dark coffee */
+  --chart-5: 15 80% 25%; /* Espresso */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 25 47% 8%; /* Very dark coffee */
+    --foreground: 36 33% 95%; /* Light cream */
+    --card: 25 35% 12%; /* Dark coffee card */
+    --card-foreground: 36 33% 95%; /* Light cream */
+    --popover: 25 35% 12%; /* Dark coffee popover */
+    --popover-foreground: 36 33% 95%; /* Light cream */
+    --primary: 35 45% 60%; /* Lighter coffee for dark mode */
+    --primary-foreground: 25 47% 8%; /* Very dark coffee */
+    --secondary: 25 25% 20%; /* Dark coffee secondary */
+    --secondary-foreground: 36 33% 95%; /* Light cream */
+    --muted: 25 20% 18%; /* Dark muted coffee */
+    --muted-foreground: 30 25% 65%; /* Light coffee brown */
+    --accent: 25 50% 45%; /* Medium coffee accent */
+    --accent-foreground: 36 33% 95%; /* Light cream */
+    --destructive: 0 62.8% 50%; /* Darker red for dark mode */
+    --destructive-foreground: 210 40% 98%; /* White */
+    --border: 25 20% 25%; /* Dark coffee border */
+    --input: 25 20% 22%; /* Dark coffee input */
+    --ring: 35 45% 60%; /* Lighter coffee ring */
+    --chart-1: 35 45% 60%; /* Light coffee */
+    --chart-2: 25 60% 50%; /* Medium coffee */
+    --chart-3: 45 35% 40%; /* Dark tan */
+    --chart-4: 18 65% 35%; /* Dark coffee */
+    --chart-5: 15 80% 25%; /* Espresso */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Coffee-themed custom styles */
+.coffee-gradient {
+  background: linear-gradient(135deg, hsl(18, 65%, 45%) 0%, hsl(25, 60%, 35%) 100%);
+}
+
+.coffee-shadow {
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15);
+}
+
+.coffee-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 80%, hsla(18, 65%, 45%, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsla(25, 60%, 35%, 0.1) 0%, transparent 50%);
+}
