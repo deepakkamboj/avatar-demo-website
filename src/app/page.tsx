@@ -23,11 +23,155 @@ import {
   Mail,
   Quote,
   Star,
+  PlayCircle,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { WorkflowAvatarPipeline } from "@/components/workflow";
 import { SequenceDiagram } from "@/components/sequence-diagram";
 import { useDemoDialog } from "@/contexts/demo-context";
+
+const demoSlides = [
+  {
+    id: "playground",
+    image: "/demo/playground.jpg",
+    title: "Interactive Avatar Playground",
+    description:
+      "Experience real-time avatar conversations with customizable personas and scenarios.",
+    featured: true,
+  },
+  {
+    id: "apitesting",
+    image: "/demo/apitesting.jpg",
+    title: "API Testing Hub",
+    description:
+      "Comprehensive API endpoint testing with real-time response monitoring.",
+  },
+  {
+    id: "modelsplayground",
+    image: "/demo/modelsplayground.jpg",
+    title: "AI Models Playground",
+    description:
+      "Test and compare different AI models with various parameters and configurations.",
+  },
+  {
+    id: "orderfrontend",
+    image: "/demo/orderfrontend.jpg",
+    title: "Customer Order Experience",
+    description:
+      "Streamlined ordering interface with avatar-guided customer interactions.",
+  },
+  {
+    id: "settings",
+    image: "/demo/settings.jpg",
+    title: "Advanced Configuration",
+    description:
+      "Fine-tune avatar behaviors, responses, and integration settings.",
+  },
+];
+
+interface DemoCarouselProps {
+  onDemoClick: () => void;
+}
+
+function DemoCarousel({ onDemoClick }: DemoCarouselProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % demoSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + demoSlides.length) % demoSlides.length
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  return (
+    <div className="mt-12">
+      {/* Main Carousel */}
+      <div className="relative max-w-4xl mx-auto">
+        <div className="relative overflow-hidden rounded-2xl">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {demoSlides.map((slide, index) => (
+              <div key={slide.id} className="w-full flex-shrink-0">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                  <div className="relative rounded-2xl border bg-card overflow-hidden shadow-lg">
+                    <Image
+                      src={slide.image}
+                      alt={slide.title}
+                      width={800}
+                      height={500}
+                      className="w-full h-64 md:h-80 object-cover"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold mb-2">
+                        {slide.title}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {slide.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Navigation Arrows */}
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm"
+          onClick={prevSlide}
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm"
+          onClick={nextSlide}
+        >
+          <ChevronRight className="h-4 w-4" />
+        </Button>
+      </div>
+
+      {/* Dots Indicator */}
+      <div className="flex justify-center gap-2 mt-6">
+        {demoSlides.map((_, index) => (
+          <button
+            key={index}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              index === currentSlide ? "bg-primary" : "bg-muted-foreground/30"
+            }`}
+            onClick={() => goToSlide(index)}
+          />
+        ))}
+      </div>
+
+      {/* Call to Action */}
+      <div className="text-center mt-8">
+        <Button size="lg" onClick={onDemoClick} className="gap-2">
+          <PlayCircle className="h-5 w-5" />
+          Try Interactive Demo
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const { openDemo } = useDemoDialog();
@@ -314,6 +458,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Demo Screenshots */}
+      <section id="demo-screenshots" className="container py-16 md:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight">
+            See It In Action
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Explore our comprehensive demo interface showcasing avatar
+            interactions, API testing, and real-time configurations.
+          </p>
+        </div>
+
+        <DemoCarousel onDemoClick={openDemo} />
+      </section>
+
       {/* Architecture */}
       <section id="architecture" className="container py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
@@ -596,7 +755,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-1">
                       <img
-                        src="/aur.png"
+                        src="/user/aurelie.png"
                         alt="Aurelie Saada"
                         className="w-full h-full object-cover rounded-full"
                       />
