@@ -596,7 +596,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-1">
                       <img
-                        src="/aur.png"
+                        src="/user/aurelie.png"
                         alt="Aurelie Saada"
                         className="w-full h-full object-cover rounded-full"
                       />
@@ -656,11 +656,11 @@ export default function Home() {
                     </div>
 
                     <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
-                      "As a FastTrack Program Manager, I will leverage the
+                      &ldquo;As a FastTrack Program Manager, I will leverage the
                       Avatar Agent to quickly support customers efficiently
                       during the execution and migration to the new agreement
                       structures. This AI tool is critical for different
-                      customer engagement and support scenarios."
+                      customer engagement and support scenarios.&rdquo;
                     </blockquote>
                   </div>
 
