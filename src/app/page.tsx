@@ -600,7 +600,7 @@ export default function Home() {
             {
               step: "Phase 1",
               desc: "Proof-of-concept demo for orders",
-              details: ["Basic avatar UI", "Speech ↔ text round‑trip"],
+              details: ["Basic avatar UI", "Speech ↔ text round‑trip", "Agent integration", "Multilingual"],
             },
             {
               step: "Phase 2",
