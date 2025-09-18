@@ -97,7 +97,7 @@ function DemoCarousel({ onDemoClick }: DemoCarouselProps) {
   return (
     <div className="mt-12">
       {/* Main Carousel */}
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-7xl mx-auto px-4">
         <div className="relative overflow-hidden rounded-2xl">
           <div
             className="flex transition-transform duration-500 ease-in-out"
@@ -108,18 +108,23 @@ function DemoCarousel({ onDemoClick }: DemoCarouselProps) {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
                   <div className="relative rounded-2xl border bg-card overflow-hidden shadow-lg">
-                    <Image
-                      src={slide.image}
-                      alt={slide.title}
-                      width={1200}
-                      height={800}
-                      className="w-full h-96 md:h-[32rem] lg:h-[36rem] object-cover"
-                    />
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2">
+                    {/* Image Container with Proper Aspect Ratio */}
+                    <div className="relative w-full bg-gray-50">
+                      <Image
+                        src={slide.image}
+                        alt={slide.title}
+                        width={1400}
+                        height={900}
+                        className="w-full h-auto max-h-[70vh] object-contain bg-white"
+                        style={{ aspectRatio: "16/10" }}
+                        priority={index === 0}
+                      />
+                    </div>
+                    <div className="p-4 md:p-6">
+                      <h3 className="text-lg md:text-xl font-semibold mb-2">
                         {slide.title}
                       </h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-sm md:text-base text-muted-foreground">
                         {slide.description}
                       </p>
                     </div>
@@ -134,7 +139,7 @@ function DemoCarousel({ onDemoClick }: DemoCarouselProps) {
         <Button
           variant="outline"
           size="icon"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm shadow-lg hover:shadow-xl"
           onClick={prevSlide}
         >
           <ChevronLeft className="h-4 w-4" />
@@ -142,7 +147,7 @@ function DemoCarousel({ onDemoClick }: DemoCarouselProps) {
         <Button
           variant="outline"
           size="icon"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm shadow-lg hover:shadow-xl"
           onClick={nextSlide}
         >
           <ChevronRight className="h-4 w-4" />
@@ -755,7 +760,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-1">
                       <img
-                        src="/user/aurelie.png"
+                        src="/aur.png"
                         alt="Aurelie Saada"
                         className="w-full h-full object-cover rounded-full"
                       />
