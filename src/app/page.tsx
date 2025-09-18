@@ -21,6 +21,8 @@ import {
   Linkedin,
   Github,
   Mail,
+  Quote,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WorkflowAvatarPipeline } from "@/components/workflow";
@@ -569,6 +571,123 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background to-secondary/20" />
+        <div className="container py-16 md:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight">
+              Customer Success Stories
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              See how organizations are transforming their customer engagement
+              with our AI avatars
+            </p>
+          </div>
+
+          <div className="mt-12 mx-auto max-w-6xl">
+            <div className="rounded-2xl border bg-card/50 backdrop-blur-sm p-8 md:p-12">
+              {/* Microsoft FastTrack Use Case */}
+              <div className="flex flex-col lg:flex-row gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <div className="relative">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-1">
+                      <img
+                        src="/user/aurelie.png"
+                        alt="Aurelie Saada"
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary/10 rounded-full border-2 border-background flex items-center justify-center">
+                      <Quote className="w-4 h-4 text-primary" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex-1">
+                  <div className="mb-4">
+                    <div className="flex items-center gap-1 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                    <h3 className="text-lg font-semibold">
+                      Microsoft FastTrack Customer Success
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Enterprise Account Migration Program
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 text-sm leading-relaxed">
+                    <p className="text-foreground">
+                      <strong>Use Case:</strong> Our C+E FastTrack team helps
+                      Legacy Commerce Customers under EA migrate to MCA. As part
+                      of the migration, our team helps them understand the
+                      differences and guides them through the migration steps.
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-4 p-4 bg-primary/5 rounded-lg border">
+                      <div>
+                        <p className="font-medium text-primary">
+                          Current Challenge
+                        </p>
+                        <p className="text-muted-foreground">
+                          Program Managers spend{" "}
+                          <strong>2 hours per customer</strong> to prepare and
+                          present migration steps
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-medium text-primary">
+                          Avatar Solution
+                        </p>
+                        <p className="text-muted-foreground">
+                          Creates ROI of <strong>713 hours per year</strong> by
+                          automating presentations
+                        </p>
+                      </div>
+                    </div>
+
+                    <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
+                      "As a FastTrack Program Manager, I will leverage the
+                      Avatar Agent to quickly support customers efficiently
+                      during the execution and migration to the new agreement
+                      structures. This AI tool is critical for different
+                      customer engagement and support scenarios."
+                    </blockquote>
+                  </div>
+
+                  <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
+                    <div>
+                      <p className="font-medium">Aurelie Saada</p>
+                      <p className="text-sm text-muted-foreground">
+                        Business Operation Director, Microsoft
+                      </p>
+                      <a
+                        href="mailto:Aurelie.Saada@microsoft.com"
+                        className="text-xs text-primary hover:underline"
+                      >
+                        Aurelie.Saada@microsoft.com
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <div className="w-6 h-6 bg-[#0078d4] rounded flex items-center justify-center">
+                        <span className="text-white font-bold text-xs">M</span>
+                      </div>
+                      <span>Microsoft FastTrack</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
