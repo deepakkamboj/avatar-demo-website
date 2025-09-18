@@ -574,11 +574,11 @@ export default function Home() {
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-5">
           {[
-            { icon: Cloud, label: "Azure" },
-            { icon: Cpu, label: "OpenAI" },
+            { icon: Cloud, label: "Azure OpenAI" },
+            { icon: Mic, label: "Azure Speech SDK" },
             { icon: Database, label: "SQLite" },
             { icon: Globe2, label: "NextJs" },
-            { icon: LineChart, label: "Tailwind CSS" },
+            { icon: Cpu, label: "Vercel AI SDK" },
           ].map((s, i) => (
             <div key={i} className="rounded-xl border p-5 bg-card text-center">
               <div className="mx-auto h-10 w-10 rounded-md bg-primary/10 text-primary grid place-items-center ring-1 ring-primary/20">
