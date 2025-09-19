@@ -35,6 +35,13 @@ import { SequenceDiagram } from "@/components/sequence-diagram";
 import { useDemoDialog } from "@/contexts/demo-context";
 
 const demoSlides = [
+    {
+    id: "avatar",
+    image: "/demo/avatar.jpg",
+    title: "Live Avatar Interaction",
+    description:
+      "See the AI avatar in action with real-time voice synthesis and natural conversation flow.",
+  },
   {
     id: "playground",
     image: "/demo/playground.jpg",
