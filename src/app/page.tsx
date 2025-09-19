@@ -839,7 +839,7 @@ export default function Home() {
                     <div>
                       <p className="font-medium">Aurelie Saada</p>
                       <p className="text-sm text-muted-foreground">
-                        Business Operation Director, Microsoft
+                        AI Transformation PM Lead, Microsoft
                       </p>
                       <a
                         href="mailto:Aurelie.Saada@microsoft.com"
@@ -878,7 +878,7 @@ export default function Home() {
                 <Bot className="h-4 w-4 mr-2" /> Try the demo
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="mailto:avatarconnect@microsoft.com">Contact us</a>
+                <a href="mailto:avatarconnecthackathon2025@microsoft.com">Contact us</a>
               </Button>
             </div>
           </div>
