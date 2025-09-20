@@ -101,7 +101,7 @@ export function DemoDialog({ isOpen, onClose }: DemoDialogProps) {
             onLoadedMetadata={handleLoadedMetadata}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
-            poster="/demo/avatar.jpg"
+            poster="/demo.jpg"
           >
             <source src="/demo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
