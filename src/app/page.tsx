@@ -242,7 +242,7 @@ export default function Home() {
                       <img
                         src="/banner.png"
                         alt="Barista Avatar Banner"
-                        className="w-32 h-auto object-contain"
+                        className="w-64 h-auto object-contain"
                       />
                     </div>
                     <p className="font-semibold">Barista Avatar</p>
