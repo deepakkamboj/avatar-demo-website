@@ -238,8 +238,12 @@ export default function Home() {
               <div className="aspect-square md:aspect-[4/3] rounded-2xl border bg-gradient-to-br from-primary/10 via-background to-accent/10 p-2">
                 <div className="h-full w-full rounded-xl border bg-background grid place-items-center">
                   <div className="text-center px-6">
-                    <div className="mx-auto mb-3 h-14 w-14 rounded-full bg-primary/10 text-primary grid place-items-center ring-1 ring-primary/20">
-                      <Bot className="h-7 w-7" />
+                        <div className="mx-auto mb-3 flex justify-center">
+                      <img
+                        src="/banner.png"
+                        alt="Barista Avatar Banner"
+                        className="max-w-full h-auto object-contain"
+                      />
                     </div>
                     <p className="font-semibold">Barista Avatar</p>
                     <p className="mt-1 text-sm text-muted-foreground">
